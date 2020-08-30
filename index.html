@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Welcome to my fortfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+
+    <style>
+      .sm-img:hover {
+        animation: shake 0.5s;
+        animation-iteration-count: infinite;
+      }
+      .tile-grow { transition: transform .2s ease-in-out; }
+      .tile-grow:hover { transform: scale(1.05); }
+
+      @keyframes shake {
+        0% { transform: translate(1px, 1px) rotate(0deg); }
+        10% { transform: translate(-1px, -2px) rotate(-1deg); }
+        20% { transform: translate(-3px, 0px) rotate(1deg); }
+        30% { transform: translate(3px, 2px) rotate(0deg); }
+        40% { transform: translate(1px, -1px) rotate(1deg); }
+        50% { transform: translate(-1px, 2px) rotate(-1deg); }
+        60% { transform: translate(-3px, 1px) rotate(0deg); }
+        70% { transform: translate(3px, 1px) rotate(-1deg); }
+        80% { transform: translate(-1px, -1px) rotate(1deg); }
+        90% { transform: translate(1px, 2px) rotate(0deg); }
+        100% { transform: translate(1px, -2px) rotate(-1deg); }
+      }
+
+
+    </style>
+
+    
   </head>
   <body>
   <section class="section">
@@ -18,27 +45,81 @@
         </p>
       </div>
       <div class="column">
-        <figure class="image is-32x32">
+        <figure class="image is-64x64">
           <a href="https://facebook.com/meggy.meg.megyow">
-            <img class="is-rounded" src="logo/facebook.png">
+            <img class="is-rounded sm-img" src="logo/facebook.png">
           </a>
         </figure>
       </div>
       <div class="column">
-        <figure class="image is-32x32">
+        <figure class="image is-64x64">
           <a href="https://twitter.com/meguivencan">
-            <img class="is-rounded" src="logo/twitter.png">
+            <img class="is-rounded sm-img" src="logo/twitter.png">
           </a>
         </figure>
       </div>
       <div class="column">
-        <figure class="image is-32x32">
+        <figure class="image is-64x64">
           <a href="https://linkedin.com/in/meguivencan">
-            <img class="is-rounded" src="logo/linkedin.png">
+            <img class="is-rounded sm-img" src="logo/linkedin.png">
           </a>
         </figure>
       </div>
     </div>
   </section>
+
+  <div class="column">
+    <div class="tile is-ancestor">
+  <div class="tile is-vertical is-8">
+    <div class="tile">
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-info tile-grow">
+          <p class="title">About MEG</p>
+          <p class="subtitle">“Failing doesn’t give you a reason to give up, as long as you believe.” -Naruto Uzumaki</p>
+          <figure class="image">
+            <img src="logo/profile.jpg" class="is-rounded ">
+          </figure>
+        </article>
+      </div>
+      <div class="tile is-parent is-vertical">
+        <article class="tile is-child notification is-primary  tile-grow">
+          <p class="title">Job Experiences</p>
+          <p class="subtitle">I love doing coding and making web designs as simple as possible and my dream programmer job is to be a web developer at Facebook and I believe someday I will create my own social media platform. Click here to find out more about my job experiences.</p>
+        </article>
+        <article class="tile is-child notification is-success  tile-grow">
+          <p class="title">Resume</p>
+          <p class="subtitle"></p>
+        </article>
+      </div>
+      
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-danger  tile-grow">
+        <p class="title">How to contact me?</p>
+        <p class="subtitle">Aside from the social media links on the upper right corner, click this area to see more contact information</p>
+        <div class="content">
+          <!-- Content -->
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child notification is-warning  tile-grow">
+      <div class="content">
+        <p class="title">Skills</p>
+        <p class="subtitle">This is my sample minimalist vector art work and I named it Jun-jun the millenial teddy bear. Click this area to see more.</p>
+        <figure class="image">
+          <img src="logo/badbear_nobg.png">
+        </figure>
+        <p class="subtitle">
+          “Hard work is worthless for those that don’t believe in themselves.” -Naruto Uzumaki
+        </p>
+      </article>
+      </div>
+    </article>
+  </div>
+</div>
+  </div>
+
   </body>
 </html>
