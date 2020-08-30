@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 
     <style>
+
+      body {
+        font-family: sans-serif;
+        &.in-transition {
+          transition: transform 900ms ease;
+        }
+      }
       .sm-img:hover {
         animation: shake 0.5s;
         animation-iteration-count: infinite;
@@ -28,97 +35,191 @@
         100% { transform: translate(1px, -2px) rotate(-1deg); }
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
+      #home-section {
+      }
+
+      #about-section {
+      }
+
 
     </style>
+    <script type="text/javascript">
+      var targetOffset, currentPosition,
+          body = document.body,
+          button = document.getElementById('scrollButton'),
+          animateTime = 900;
 
+      function getPageScroll() {
+        var yScroll;
+
+        if (window.pageYOffset) {
+          yScroll = window.pageYOffset;
+        } else if (document.documentElement && document.documentElement.scrollTop) {
+          yScroll = document.documentElement.scrollTop;
+        } else if (document.body) {
+          yScroll = document.body.scrollTop;
+        }
+        return yScroll;
+      }
+
+      button.addEventListener('click', function (event) {
+
+        targetOffset = document.getElementById(event.target.hash.substr(1)).offsetTop;
+        currentPosition = getPageScroll();
+
+        body.classList.add('in-transition');
+        body.style.WebkitTransform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
+        body.style.MozTransform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
+        body.style.transform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
+
+        window.setTimeout(function () {
+          body.classList.remove('in-transition');
+          body.style.cssText = "";
+          window.scrollTo(0, targetOffset);
+        }, animateTime);
+
+        event.preventDefault();
+
+      }, false);
+    </script>
     
   </head>
   <body>
-  <section class="section">
+  <section class="section" id="home-section">
     <div class="columns">
-      <div class="column is-four-fifths">
-        <h1 class="title">
-           Michael Eduard Guivencan
-        </h1>
-        <p class="subtitle">
-          Web Developer • IT Specialist • Technical Support Engineer • Vector Artist
-        </p>
+      <div class="column  is-three-forths">
+        <div class="column">
+          <h1 class="title">
+             Michael Eduard Guivencan
+          </h1>
+          <p class="subtitle">
+            Web Developer • IT Specialist • Technical Support Engineer • Vector Artist
+          </p>
+        </div>
       </div>
-      <div class="column">
-        <figure class="image is-64x64">
-          <a href="https://facebook.com/meggy.meg.megyow">
-            <img class="is-rounded sm-img" src="logo/facebook.png">
-          </a>
-        </figure>
+      <div class="column is-one-quarter">
+        <div class="columns">
+          <div class="column">
+            <figure class="image is-64x64">
+              <a href="https://facebook.com/meggy.meg.megyow">
+                <img class="is-rounded sm-img" src="logo/facebook.png">
+              </a>
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-64x64">
+              <a href="https://twitter.com/meguivencan">
+                <img class="is-rounded sm-img" src="logo/twitter.png">
+              </a>
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-64x64">
+              <a href="https://linkedin.com/in/meguivencan">
+                <img class="is-rounded sm-img" src="logo/linkedin.png">
+              </a>
+            </figure>
+          </div>
+        </div>
       </div>
-      <div class="column">
-        <figure class="image is-64x64">
-          <a href="https://twitter.com/meguivencan">
-            <img class="is-rounded sm-img" src="logo/twitter.png">
-          </a>
-        </figure>
-      </div>
-      <div class="column">
-        <figure class="image is-64x64">
-          <a href="https://linkedin.com/in/meguivencan">
-            <img class="is-rounded sm-img" src="logo/linkedin.png">
-          </a>
-        </figure>
-      </div>
+
     </div>
   </section>
 
   <div class="column">
     <div class="tile is-ancestor">
-  <div class="tile is-vertical is-8">
-    <div class="tile">
-      <div class="tile is-parent">
-        <article class="tile is-child notification is-info tile-grow">
-          <p class="title">About MEG</p>
-          <p class="subtitle">“Failing doesn’t give you a reason to give up, as long as you believe.” -Naruto Uzumaki</p>
-          <figure class="image">
-            <img src="logo/profile.jpg" class="is-rounded ">
-          </figure>
-        </article>
-      </div>
-      <div class="tile is-parent is-vertical">
-        <article class="tile is-child notification is-primary  tile-grow">
-          <p class="title">Job Experiences</p>
-          <p class="subtitle">I love doing coding and making web designs as simple as possible and my dream programmer job is to be a web developer at Facebook and I believe someday I will create my own social media platform. Click here to find out more about my job experiences.</p>
-        </article>
-        <article class="tile is-child notification is-success  tile-grow">
-          <p class="title">Resume</p>
-          <p class="subtitle"></p>
-        </article>
-      </div>
-      
-    </div>
-    <div class="tile is-parent">
-      <article class="tile is-child notification is-danger  tile-grow">
-        <p class="title">How to contact me?</p>
-        <p class="subtitle">Aside from the social media links on the upper right corner, click this area to see more contact information</p>
-        <div class="content">
-          <!-- Content -->
+      <div class="tile is-vertical is-8">
+        <div class="tile">
+          <div class="tile is-parent">
+            <a href="#about-section">
+              <article class="tile is-child notification is-info tile-grow">
+                <p class="title">About MEG</p>
+                <p class="subtitle">“Failing doesn’t give you a reason to give up, as long as you believe.” -Naruto Uzumaki</p>
+                <figure class="image">
+                  <img src="logo/profile.jpg" class="is-rounded ">
+                </figure>
+              </article>
+            </a>
+          </div>
+          <div class="tile is-parent is-vertical">
+            <article class="tile is-child notification is-primary  tile-grow">
+              <p class="title">Job Experiences</p>
+              <p class="subtitle">I love doing coding and making web designs as simple as possible and my dream programmer job is to be a web developer at Facebook and I believe someday I will create my own social media platform. Click here to find out more about my job experiences.</p>
+            </article>
+            <article class="tile is-child notification is-success  tile-grow">
+              <p class="title">Resume</p>
+              <p class="subtitle"></p>
+            </article>
+          </div>
+          
         </div>
-      </article>
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-danger  tile-grow">
+            <p class="title">How to contact me?</p>
+            <p class="subtitle">Aside from the social media links on the upper right corner, click this area to see more contact information</p>
+          </article>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-warning has-text-white  tile-grow">
+          <div class="content">
+            <p class="title">Skills</p>
+            <p class="subtitle">This is my sample minimalist vector art work and I named it Jun-jun the millenial teddy bear. Click this area to see more.</p>
+            <figure class="image">
+              <img src="logo/badbear_nobg.png">
+            </figure>
+            <p class="subtitle">
+              “Hard work is worthless for those that don’t believe in themselves.” -Naruto Uzumaki
+            </p>
+          </article>
+          </div>
+        </article>
+      </div>
     </div>
   </div>
-  <div class="tile is-parent">
-    <article class="tile is-child notification is-warning  tile-grow">
-      <div class="content">
-        <p class="title">Skills</p>
-        <p class="subtitle">This is my sample minimalist vector art work and I named it Jun-jun the millenial teddy bear. Click this area to see more.</p>
-        <figure class="image">
-          <img src="logo/badbear_nobg.png">
-        </figure>
-        <p class="subtitle">
-          “Hard work is worthless for those that don’t believe in themselves.” -Naruto Uzumaki
-        </p>
-      </article>
+
+  </br>
+
+  <div class="columns" id="about-section">
+    <div class="column is-10 is-offset-1">
+      <div class="card">
+        
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-128x128">
+                <img src="logo/profile.jpg" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-2">Michael Eduard Guivencan</p>
+              <p class="subtitle is-4">@meguivencan</p>
+            </div>
+          </div>
+
+          <div class="content">
+            <p class="subtitle is-4">
+              Hello guys! welcome to my forfolio, By the way just call me Meg for short I live in Caloocan City and I have done Bachelor of
+              Science in Information System at University of Caloocan City. 
+              <a href="#">#BSIS</a> <a href="#">#Batch2016</a>
+              <br>
+              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+            </p>
+            
+          </div>
+          <div class="card-image">
+            <figure class="image">
+              <img src="logo/gradpic.jpg" alt="Placeholder image">
+            </figure>
+          </div>
+          
+        </div>
       </div>
-    </article>
-  </div>
-</div>
+    </div>
   </div>
 
   </body>
