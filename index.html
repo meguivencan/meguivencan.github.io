@@ -5,11 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Welcome to my fortfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <style>
 
       body {
-        font-family: sans-serif;
+         background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+         background-size: 400% 400%;
+          animation: gradient 10s ease infinite;
+      }
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
         &.in-transition {
           transition: transform 900ms ease;
         }
@@ -47,45 +61,7 @@
 
 
     </style>
-    <script type="text/javascript">
-      var targetOffset, currentPosition,
-          body = document.body,
-          button = document.getElementById('scrollButton'),
-          animateTime = 900;
 
-      function getPageScroll() {
-        var yScroll;
-
-        if (window.pageYOffset) {
-          yScroll = window.pageYOffset;
-        } else if (document.documentElement && document.documentElement.scrollTop) {
-          yScroll = document.documentElement.scrollTop;
-        } else if (document.body) {
-          yScroll = document.body.scrollTop;
-        }
-        return yScroll;
-      }
-
-      button.addEventListener('click', function (event) {
-
-        targetOffset = document.getElementById(event.target.hash.substr(1)).offsetTop;
-        currentPosition = getPageScroll();
-
-        body.classList.add('in-transition');
-        body.style.WebkitTransform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
-        body.style.MozTransform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
-        body.style.transform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
-
-        window.setTimeout(function () {
-          body.classList.remove('in-transition');
-          body.style.cssText = "";
-          window.scrollTo(0, targetOffset);
-        }, animateTime);
-
-        event.preventDefault();
-
-      }, false);
-    </script>
     
   </head>
   <body>
@@ -93,7 +69,7 @@
     <div class="columns">
       <div class="column  is-three-forths">
         <div class="column">
-          <h1 class="title">
+          <h1 class="title has-text-white is-size-1">
              Michael Eduard Guivencan
           </h1>
           <p class="subtitle">
@@ -135,92 +111,139 @@
       <div class="tile is-vertical is-8">
         <div class="tile">
           <div class="tile is-parent">
-            <a href="#about-section">
+            <a href="pages/aboutme.html">
               <article class="tile is-child notification is-info tile-grow">
                 <p class="title">About MEG</p>
                 <p class="subtitle">“Failing doesn’t give you a reason to give up, as long as you believe.” -Naruto Uzumaki</p>
                 <figure class="image">
-                  <img src="logo/profile.jpg" class="is-rounded ">
+                  <img src="logo/meg.jpg" class="is-rounded is-128x128">
                 </figure>
               </article>
             </a>
           </div>
           <div class="tile is-parent is-vertical">
-            <article class="tile is-child notification is-primary  tile-grow">
-              <p class="title">Job Experiences</p>
-              <p class="subtitle">I love doing coding and making web designs as simple as possible and my dream programmer job is to be a web developer at Facebook and I believe someday I will create my own social media platform. Click here to find out more about my job experiences.</p>
+            <a href="pages/jobexperience.html" class="is-child notification is-primary tile tile-grow">
+              <article class="">
+                <p class="title">Job Experiences</p>
+                <p class="subtitle">
+                To have a productive and challenging work that utilizes my skills to developed through my educational and professional experiences, and with the opportunity for career advancement and growth.</p>
             </article>
+            </a>
+              
             <article class="tile is-child notification is-success  tile-grow">
               <p class="title">Resume</p>
-              <p class="subtitle"></p>
+              <div class="columns">
+                <div class="column">
+                  <a href="document/michael-resume.doc" download="Michael_Resume">
+                    <img src="logo/download.png" class="image is-128x128">
+                    <p>Click to download</p>
+                  </a>
+                  
+                </div>
+                <div class="column">
+                  <a href="document/michael-resume.pdf" download="Michael_Resume">
+                    <img src="logo/pdf.png" class="image is-128x128">
+                    <p>Click to view or download in pdf file</p>
+                  </a>
+                  
+                </div>
+              </div>
             </article>
           </div>
           
         </div>
         <div class="tile is-parent">
-          <article class="tile is-child notification is-danger  tile-grow">
-            <p class="title">How to contact me?</p>
-            <p class="subtitle">Aside from the social media links on the upper right corner, click this area to see more contact information</p>
-          </article>
+          <a href="" class="tile is-child notification is-danger  tile-grow" id="modal-open">
+            <article class="">
+              <p class="title">How to reach me?</p>
+              <p class="subtitle">Aside from the social media links on the upper right corner, click this area to see more contact information</p>
+            </article>
+          </a>
         </div>
       </div>
       <div class="tile is-parent">
-        <article class="tile is-child notification is-warning has-text-white  tile-grow">
+        <a href="pages/skills.html" class="tile is-child notification is-warning has-text-white  tile-grow">
+          <article class="">
           <div class="content">
             <p class="title">Skills</p>
             <p class="subtitle">This is my sample minimalist vector art work and I named it Jun-jun the millenial teddy bear. Click this area to see more.</p>
             <figure class="image">
-              <img src="logo/badbear_nobg.png">
+              <img src="logo/badbear.png" class="is-rounded">
             </figure>
             <p class="subtitle">
               “Hard work is worthless for those that don’t believe in themselves.” -Naruto Uzumaki
             </p>
-          </article>
-          </div>
         </article>
-      </div>
-    </div>
-  </div>
-
-  </br>
-
-  <div class="columns" id="about-section">
-    <div class="column is-10 is-offset-1">
-      <div class="card">
+        </a>
         
-        <div class="card-content">
-          <div class="media">
-            <div class="media-left">
-              <figure class="image is-128x128">
-                <img src="logo/profile.jpg" alt="Placeholder image">
-              </figure>
-            </div>
-            <div class="media-content">
-              <p class="title is-2">Michael Eduard Guivencan</p>
-              <p class="subtitle is-4">@meguivencan</p>
-            </div>
-          </div>
-
-          <div class="content">
-            <p class="subtitle is-4">
-              Hello guys! welcome to my forfolio, By the way just call me Meg for short I live in Caloocan City and I have done Bachelor of
-              Science in Information System at University of Caloocan City. 
-              <a href="#">#BSIS</a> <a href="#">#Batch2016</a>
-              <br>
-              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-            </p>
-            
-          </div>
-          <div class="card-image">
-            <figure class="image">
-              <img src="logo/gradpic.jpg" alt="Placeholder image">
-            </figure>
-          </div>
-          
-        </div>
       </div>
     </div>
   </div>
+  </hr>
+  <div class="columns">
+    <div class="column">
+      
+    </div>
+    <div class="column">
+      Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    </div>
+    <div class="column">
+      
+    </div>
+  </div>
+  <div class="columns">
+
+    <div class="column">
+      <div class="modal" id="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Contacts</p>
+            <button class="delete" aria-label="close" id="modal-close"></button>
+
+          </header>
+          <section class="modal-card-body">
+            <div class="columns">
+              <div class="column is-2">
+                <img src="logo/email.png" class="image is-64x64">
+
+              </div>
+              <div class="column">
+                <h1 class="title">meguivencan@gmail.com</h1>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column is-2">
+                <img src="logo/viber.png" class="image is-64x64">
+
+              </div>
+              <div class="column">
+                <h1 class="title">+639287580119</h1>
+              </div>
+            </div>
+          </section>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
 
   </body>
+  <script type="text/javascript">
+  
+document.querySelector('#modal-open').addEventListener('click', function(event) {
+  event.preventDefault();
+  var modal = document.querySelector('.modal');  // assuming you have only 1
+  var html = document.querySelector('html');
+  modal.classList.add('is-active');
+  html.classList.add('is-clipped');
+
+  modal.querySelector('#modal-close').addEventListener('click', function(e) {
+    e.preventDefault();
+    modal.classList.remove('is-active');
+    html.classList.remove('is-clipped');
+  });
+});
+  </script>
 </html>
