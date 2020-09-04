@@ -59,6 +59,9 @@
       #about-section {
       }
 
+      .tile-border {
+      	border-style: outset;
+      }
 
     </style>
 
@@ -69,10 +72,10 @@
     <div class="columns">
       <div class="column  is-three-forths">
         <div class="column">
-          <h1 class="title has-text-white is-size-1">
-             Michael Eduard Guivencan
+          <h1 class="title has-text-white is-size-1 has-text-weight-bold">
+             MICHAEL EDUARD GUIVENCAN
           </h1>
-          <p class="subtitle">
+          <p class="subtitle has-text-white is-italic is-size-4">
             Web Developer • IT Specialist • Technical Support Engineer • Vector Artist
           </p>
         </div>
@@ -108,30 +111,31 @@
 
   <div class="column">
     <div class="tile is-ancestor">
-      <div class="tile is-vertical is-8">
+      <div class="tile is-vertical">
         <div class="tile">
-          <div class="tile is-parent">
+          <div class="tile is-parent is-5">
             <a href="pages/aboutme.html">
-              <article class="tile is-child notification is-info tile-grow">
-                <p class="title">About MEG</p>
+              <article class="tile is-child notification is-info tile-grow tile-border">
+                <p class="title has-text-centered is-size-2">About M.E.G</p>
                 <p class="subtitle">“Failing doesn’t give you a reason to give up, as long as you believe.” -Naruto Uzumaki</p>
                 <figure class="image">
-                  <img src="logo/meg.jpg" class="is-rounded is-128x128">
+                  <img src="logo/profile.jpg" class="is-rounded is-128x128">
                 </figure>
               </article>
             </a>
           </div>
           <div class="tile is-parent is-vertical">
-            <a href="pages/jobexperience.html" class="is-child notification is-primary tile tile-grow">
+            <a href="pages/jobexperience.html" class="is-child notification is-info tile tile-grow  tile-border">
               <article class="">
-                <p class="title">Job Experiences</p>
+                <p class="title has-text-centered is-size-2">Job Experiences</p>
+                <br/ >
                 <p class="subtitle">
                 To have a productive and challenging work that utilizes my skills to developed through my educational and professional experiences, and with the opportunity for career advancement and growth.</p>
             </article>
             </a>
               
-            <article class="tile is-child notification is-success  tile-grow">
-              <p class="title">Resume</p>
+            <article class="tile is-child notification is-info  tile-grow  tile-border">
+              <p class="title has-text-centered  is-size-2">Resume</p>
               <div class="columns">
                 <div class="column">
                   <a href="document/michael-resume.doc" download="Michael_Resume">
@@ -150,32 +154,34 @@
               </div>
             </article>
           </div>
-          
-        </div>
-        <div class="tile is-parent">
-          <a href="" class="tile is-child notification is-danger  tile-grow" id="modal-open">
+          <div class="tile is-parent is-vertical">
+            <a href="pages/skills.html" class="is-child notification  is-info tile tile-grow  tile-border">
+              <article class="">
+                		<p class="title has-text-centered  is-size-2">Skills</p>
+
+              	<div class="columns">
+              		<div class="column">
+              			 <p class="subtitle">This is my sample minimalist vector art work. Click this area to see more.</p>
+              		</div>
+              		<div class="column">
+
+			            <figure class="image is-128x128">
+			              <img src="logo/badbear_nobg.png">
+			            </figure>
+              		</div>
+              	</div>
+            </article>
+            </a>
+              
+          <a href="" class="tile is-child notification  is-info  tile-grow  tile-border" id="modal-open">
             <article class="">
-              <p class="title">How to reach me?</p>
+              <p class="title has-text-centered  is-size-2">How to reach me?</p>
+              <br />
               <p class="subtitle">Aside from the social media links on the upper right corner, click this area to see more contact information</p>
             </article>
           </a>
+          </div>
         </div>
-      </div>
-      <div class="tile is-parent">
-        <a href="pages/skills.html" class="tile is-child notification is-warning has-text-white  tile-grow">
-          <article class="">
-          <div class="content">
-            <p class="title">Skills</p>
-            <p class="subtitle">This is my sample minimalist vector art work and I named it Jun-jun the millenial teddy bear. Click this area to see more.</p>
-            <figure class="image">
-              <img src="logo/badbear.png" class="is-rounded">
-            </figure>
-            <p class="subtitle">
-              “Hard work is worthless for those that don’t believe in themselves.” -Naruto Uzumaki
-            </p>
-        </article>
-        </a>
-        
       </div>
     </div>
   </div>
